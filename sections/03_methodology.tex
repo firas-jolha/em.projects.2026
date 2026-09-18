@@ -1,0 +1,33 @@
+\section{Methodology}
+\label{S:methodology}
+
+% --- Replace everything below with your own content. ---
+
+\subsection{Dataset}\label{SS:dataset}
+
+
+We use a dataset consisting of \textit{[N observations/records]} collected from \textit{[source, e.g., a public repository, a survey, a lab experiment]}. Each observation includes the following variables:
+
+\begin{itemize}
+    \item \textbf{[Variable 1]} --- \textit{[type: continuous / categorical
+    / binary; brief description]}
+    \item \textbf{[Variable 2]} --- \textit{[type; description]}
+    \item \textbf{[Outcome variable]} --- \textit{[type; description]}
+\end{itemize}
+
+Raw data is stored under \texttt{data/}; any cleaning or preprocessing steps (e.g., removing missing values, outlier filtering, normalization) should be scripted under \texttt{code/} so the pipeline is reproducible rather than performed manually.
+
+
+
+\subsection{Statistical Methods}
+
+To test our hypotheses, we use \textit{[e.g., a two-sample $t$-test / one-way ANOVA / linear regression /chi-squared test]}. We report effect sizes (e.g., Cohen's $d$) alongside $p$-values, and we set the significance threshold at $\alpha = 0.05$ unless stated otherwise. Where multiple comparisons are performed, we apply \textit{[e.g., a Bonferroni correction]} to control the family-wise error rate.
+
+\begin{figure}[H]
+    \centering
+    \input{tikz/figure}
+    \caption{Randomized two-group experimental design.}
+    \label{F:rct-design}
+\end{figure}
+
+All analysis code is written in \textit{[Python]} and is available in \texttt{code/}, along with instructions for reproducing the results in \Cref{S:results}.

@@ -10,7 +10,7 @@
 \usepackage{graphicx}          % figures
 \usepackage{amsmath, amssymb}  % math
 \usepackage{booktabs}          % nice tables
-\usepackage{siunitx}           % aligned numbers / units in tables
+% \usepackage{siunitx}           % aligned numbers / units in tables
 \usepackage{caption}
 \usepackage{subcaption}        % subfigures
 \usepackage{float}             % [H] placement
@@ -59,14 +59,14 @@
 \affil[5]{University of Bologna -- Alma Mater Studiorum, Bologna, Italy (e-mail: g.succi@unibo.it)}
 \affil[6]{Constructor Knowledge Labs and Constructor University, Bremen, Germany}
 
-\corrauthor[1]{Firas Jolha}{f.jolha@innopolis.university}
+% \corrauthor[1]{Firas Jolha}{f.jolha@innopolis.university}
 
 \date{\today}
 
 \begin{document}
 
 \maketitle
-\printcorrauthornote
+% \printcorrauthornote
 
 \begin{abstract}
 Write a 150--250 word summary of your research question, methods, and
@@ -78,12 +78,11 @@ key findings here.
 
 % ---------- Sections ----------
 \input{sections/01_introduction}
-\input{sections/02_related_work}
-\input{sections/03_data_and_methods}
-\input{sections/04_experimental_design}
-\input{sections/05_results}
-\input{sections/06_discussion}
-\input{sections/07_conclusion}
+\input{sections/02_related_works}
+\input{sections/03_methodology}
+\input{sections/04_results}
+\input{sections/05_discussion}
+\input{sections/06_conclusion}
 
 % ---------- Bibliography ----------
 % plainnat/apalike/unsrtnat work with natbib's \citep / \citet
@@ -93,25 +92,25 @@ key findings here.
 % ---------- Appendix: Template usage examples ----------
 % Remove this appendix once you no longer need the reference examples below.
 \appendix
-\section{Template Usage Examples}
-\label{app:examples}
+\section{Examples}
+\label{APX:examples}
 
 This appendix demonstrates the conventions used throughout this template.
 Copy whichever snippet you need into your own section files, then delete
 this appendix from your final report.
 
 \subsection{Figures}
-Place image files in \texttt{figures/} and reference them as follows:
+Place image files in \texttt{tikz/} and reference them as follows:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/example-plot.png}
-    \caption{Example figure. Replace \texttt{figures/example-plot.png} with
-    your own file. Refer to it in text with \texttt{\textbackslash Cref\{fig:example\}}.}
-    \label{fig:example}
+    \includegraphics[width=0.6\textwidth]{tikz/example_plot.png}
+    \caption{Example figure. Replace \texttt{tikz/example-plot.png} with
+    your own file. Refer to it in text with \texttt{\textbackslash Cref\{F:example\}}.}
+    \label{F:example}
 \end{figure}
 
-As \Cref{fig:example} shows, cleveref automatically inserts the word
+As \Cref{F:example} shows, cleveref automatically inserts the word
 "Figure" for you — no need to type it manually.
 
 \subsection{Tables}
@@ -121,7 +120,7 @@ For simple tables, use \texttt{booktabs} for clean horizontal rules
 \begin{table}[H]
     \centering
     \caption{Example results table.}
-    \label{tab:example}
+    \label{T:example}
     \begin{tabular}{lcc}
         \toprule
         Model & Accuracy (\%) & F1-score \\
@@ -132,7 +131,7 @@ For simple tables, use \texttt{booktabs} for clean horizontal rules
     \end{tabular}
 \end{table}
 
-\Cref{tab:example} summarizes the comparison between the baseline and the
+\Cref{T:example} summarizes the comparison between the baseline and the
 proposed approach. For larger tables, save the \texttt{tabular} environment
 in its own file under \texttt{tables/} and pull it in with
 \texttt{\textbackslash input\{tables/your-table\}}.
@@ -160,11 +159,11 @@ theme-consistent figures that scale cleanly in the PDF.
         \draw[arrow] (analyze) -- (result);
     \end{tikzpicture}
     \caption{Example TikZ diagram of an experimental pipeline.}
-    \label{fig:tikz-example}
+    \label{F:tikz-example}
 \end{figure}
 
 For more complex diagrams, consider keeping the \texttt{tikzpicture} in its
-own file under \texttt{figures/} and \texttt{\textbackslash input\{\}}-ing it,
+own file under \texttt{tikz/} and \texttt{\textbackslash input\{\}}-ing it,
 so \texttt{main.tex} stays readable.
 
 \subsection{Citations}
