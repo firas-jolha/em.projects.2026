@@ -15,6 +15,8 @@
 \usepackage{subcaption}        % subfigures
 \usepackage{float}             % [H] placement
 \usepackage{natbib}            % \citep{}, \citet{}
+\usepackage{tikz}              % vector diagrams
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric}
 \usepackage{hyperref}          % clickable references
 \usepackage{cleveref}          % \Cref{}, \cref{} — load AFTER hyperref
 \usepackage{authblk}           % author/affiliation blocks
@@ -59,5 +61,99 @@ key findings here.
 % plainnat/apalike/unsrtnat work with natbib's \citep / \citet
 \bibliographystyle{plainnat}
 \bibliography{references}
+
+% ---------- Appendix: Template usage examples ----------
+% Remove this appendix once you no longer need the reference examples below.
+\appendix
+\section{Template Usage Examples}
+\label{app:examples}
+
+This appendix demonstrates the conventions used throughout this template.
+Copy whichever snippet you need into your own section files, then delete
+this appendix from your final report.
+
+\subsection{Figures}
+Place image files in \texttt{figures/} and reference them as follows:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/example-plot.png}
+    \caption{Example figure. Replace \texttt{figures/example-plot.png} with
+    your own file. Refer to it in text with \texttt{\textbackslash Cref\{fig:example\}}.}
+    \label{fig:example}
+\end{figure}
+
+As \Cref{fig:example} shows, cleveref automatically inserts the word
+"Figure" for you — no need to type it manually.
+
+\subsection{Tables}
+For simple tables, use \texttt{booktabs} for clean horizontal rules
+(avoid vertical rules):
+
+\begin{table}[H]
+    \centering
+    \caption{Example results table.}
+    \label{tab:example}
+    \begin{tabular}{lcc}
+        \toprule
+        Model & Accuracy (\%) & F1-score \\
+        \midrule
+        Baseline     & 72.3 & 0.68 \\
+        Proposed     & \textbf{81.5} & \textbf{0.77} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\Cref{tab:example} summarizes the comparison between the baseline and the
+proposed approach. For larger tables, save the \texttt{tabular} environment
+in its own file under \texttt{tables/} and pull it in with
+\texttt{\textbackslash input\{tables/your-table\}}.
+
+\subsection{TikZ figures}
+Students are encouraged to draw diagrams (flowcharts, experimental designs,
+architecture diagrams, decision trees, etc.) natively in \LaTeX{} using
+\texttt{TikZ} rather than pasting in screenshots — this keeps vector-quality,
+theme-consistent figures that scale cleanly in the PDF.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        node distance=1.5cm,
+        every node/.style={draw, rounded corners, align=center, minimum height=0.9cm},
+        arrow/.style={-{Latex[length=2mm]}}
+    ]
+        \node (start) {Collect Data};
+        \node (process) [right=of start] {Preprocess};
+        \node (analyze) [right=of process] {Run Experiment};
+        \node (result)  [right=of analyze] {Analyze Results};
+
+        \draw[arrow] (start) -- (process);
+        \draw[arrow] (process) -- (analyze);
+        \draw[arrow] (analyze) -- (result);
+    \end{tikzpicture}
+    \caption{Example TikZ diagram of an experimental pipeline.}
+    \label{fig:tikz-example}
+\end{figure}
+
+For more complex diagrams, consider keeping the \texttt{tikzpicture} in its
+own file under \texttt{figures/} and \texttt{\textbackslash input\{\}}-ing it,
+so \texttt{main.tex} stays readable.
+
+\subsection{Citations}
+This template uses \texttt{natbib}. Given a BibTeX entry with key
+\texttt{smith2020}, in \texttt{references.bib}:
+
+\begin{itemize}
+    \item \texttt{\textbackslash citep\{smith2020\}} renders as a parenthetical
+    citation, e.g. \citep{smith2020} — use this when the citation is not the
+    grammatical subject of the sentence.
+    \item \texttt{\textbackslash citet\{smith2020\}} renders as an in-text
+    citation, e.g. \citet{smith2020} found that... — use this when you are
+    directly discussing the authors' work.
+\end{itemize}
+
+\noindent\textit{Note:} \texttt{smith2020} is a placeholder key. Add real
+entries to \texttt{references.bib} before compiling, or these citations will
+show up as "\texttt{?}".
 
 \end{document}
