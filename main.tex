@@ -69,8 +69,7 @@
 % \printcorrauthornote
 
 \begin{abstract}
-Write a 150--250 word summary of your research question, methods, and
-key findings here.
+Write a 150--250 word summary of your research question, methods, and key findings here.
 \end{abstract}
 
 \tableofcontents
@@ -95,9 +94,7 @@ key findings here.
 \section{Examples}
 \label{APX:examples}
 
-This appendix demonstrates the conventions used throughout this template.
-Copy whichever snippet you need into your own section files, then delete
-this appendix from your final report.
+This appendix demonstrates the conventions used throughout this template. Copy whichever snippet you need into your own section files, then delete this appendix from your final report.
 
 \subsection{Figures}
 Place image files in \texttt{tikz/} and reference them as follows:
@@ -110,12 +107,10 @@ Place image files in \texttt{tikz/} and reference them as follows:
     \label{F:example}
 \end{figure}
 
-As \Cref{F:example} shows, cleveref automatically inserts the word
-"Figure" for you — no need to type it manually.
+As \Cref{F:example} shows, cleveref automatically inserts the word "Figure" for you — no need to type it manually.
 
 \subsection{Tables}
-For simple tables, use \texttt{booktabs} for clean horizontal rules
-(avoid vertical rules):
+For simple tables, use \texttt{booktabs} for clean horizontal rules (avoid vertical rules):
 
 \begin{table}[H]
     \centering
@@ -131,16 +126,10 @@ For simple tables, use \texttt{booktabs} for clean horizontal rules
     \end{tabular}
 \end{table}
 
-\Cref{T:example} summarizes the comparison between the baseline and the
-proposed approach. For larger tables, save the \texttt{tabular} environment
-in its own file under \texttt{tables/} and pull it in with
-\texttt{\textbackslash input\{tables/your-table\}}.
+\Cref{T:example} summarizes the comparison between the baseline and the proposed approach. For larger tables, save the \texttt{tabular} environment in its own file under \texttt{tables/} and pull it in with \texttt{\textbackslash input\{tables/your-table\}}.
 
 \subsection{TikZ figures}
-Students are encouraged to draw diagrams (flowcharts, experimental designs,
-architecture diagrams, decision trees, etc.) natively in \LaTeX{} using
-\texttt{TikZ} rather than pasting in screenshots — this keeps vector-quality,
-theme-consistent figures that scale cleanly in the PDF.
+Students are encouraged to draw diagrams (flowcharts, experimental designs, architecture diagrams, decision trees, etc.) natively in \LaTeX{} using \texttt{TikZ} rather than pasting in screenshots — this keeps vector-quality, theme-consistent figures that scale cleanly in the PDF.
 
 \begin{figure}[H]
     \centering
@@ -162,25 +151,16 @@ theme-consistent figures that scale cleanly in the PDF.
     \label{F:tikz-example}
 \end{figure}
 
-For more complex diagrams, consider keeping the \texttt{tikzpicture} in its
-own file under \texttt{tikz/} and \texttt{\textbackslash input\{\}}-ing it,
-so \texttt{main.tex} stays readable.
+For more complex diagrams, consider keeping the \texttt{tikzpicture} in its own file under \texttt{tikz/} and \texttt{\textbackslash input\{\}}-ing it, so \texttt{main.tex} stays readable.
 
 \subsection{Citations}
-This template uses \texttt{natbib}. Given a BibTeX entry with key
-\texttt{smith2020}, in \texttt{references.bib}:
+This template uses \texttt{natbib}. Given a BibTeX entry with key \texttt{smith2020}, in \texttt{references.bib}:
 
 \begin{itemize}
-    \item \texttt{\textbackslash citep\{smith2020\}} renders as a parenthetical
-    citation, e.g. \citep{smith2020} — use this when the citation is not the
-    grammatical subject of the sentence.
-    \item \texttt{\textbackslash citet\{smith2020\}} renders as an in-text
-    citation, e.g. \citet{smith2020} found that... — use this when you are
-    directly discussing the authors' work.
+    \item \texttt{\textbackslash citep\{smith2020\}} renders as a parenthetical citation, e.g. \citep{smith2020} — use this when the citation is not the grammatical subject of the sentence.
+    \item \texttt{\textbackslash citet\{smith2020\}} renders as an in-text citation, e.g. \citet{smith2020} found that... — use this when you are directly discussing the authors' work.
 \end{itemize}
 
-\noindent\textit{Note:} \texttt{smith2020} is a placeholder key. Add real
-entries to \texttt{references.bib} before compiling, or these citations will
-show up as "\texttt{?}".
+\noindent\textit{Note:} \texttt{smith2020} is a placeholder key. Add real entries to \texttt{references.bib} before compiling, or these citations will show up as "\texttt{?}".
 
 \end{document}
