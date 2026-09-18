@@ -16,7 +16,7 @@ This repository is the official template for the **course research project** in 
 │   ├── 05_results.tex
 │   ├── 06_discussion.tex
 │   └── 07_conclusion.tex
-├── figures/                 # TikZ plots, diagrams (.tex, .pdf)
+├── tikz/                 # TikZ plots, diagrams (.tex, .pdf)
 ├── tables/                  # Standalone .tex files for large tables (optional)
 ├── data/                    # Raw or processed datasets used in the analysis
 ├── code/                    # Analysis scripts (R, Python, etc.)
