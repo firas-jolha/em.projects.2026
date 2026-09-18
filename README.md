@@ -55,8 +55,7 @@ Your paper should include, at minimum:
 
 
 ## Adding figures and tables
-
-- Place all image files in `figures/` and reference them with `\input{figures/your-file.tex}`.
+- **TikZ diagrams are required.** For flowcharts, diagrams, architecture sketches, decision trees, etc., prefer a native `tikzpicture` over a pasted-in screenshot or an externally drawn image — it stays vector-quality, matches the document's fonts, and is easy to tweak. `main.tex` already loads `tikz` (with the `positioning`, `arrows.meta`, and `shapes.geometric` libraries). For a non-trivial diagram, keep the `tikzpicture` in its own file under `figures/` and pull it in with `\input{}` rather than inlining it in a section file.
 - For large or complex tables, create a separate `.tex` file under `tables/` and `\input{}` it from the relevant section — this keeps section files readable.
 
 ## Reproducibility
@@ -77,6 +76,9 @@ Please use these consistently instead of the plain `\cite{}` / `\ref{}` commands
   - `cleveref` must be loaded **after** `hyperref` in the preamble — this is already set up correctly in `main.tex`; do not reorder these two packages.
 
 Use consistent BibTeX entries in `references.bib`, and cite them with `\citep{}` / `\citet{}` rather than pasting formatted references directly into the text.
+
+## main.tex
+A worked appendix in `main.tex` shows ready-to-copy snippets for a figure, a table, a TikZ diagram, and both citation commands — compile the template as-is to see them rendered, then delete the appendix once you no longer need it.
 
 ## Submission checklist
 - [ ] Report compiles cleanly with no errors or missing references. Warnings are acceptable.
