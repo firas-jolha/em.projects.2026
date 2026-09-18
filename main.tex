@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[11pt, a4paper]{article}
 
 % ---------- Packages ----------
 \usepackage[utf8]{inputenc}
@@ -23,6 +23,20 @@
 \usepackage{setspace}
 \onehalfspacing
 
+% authblk has no built-in \corrauthor command; define a minimal one that
+% stores the corresponding author's name/e-mail and prints a footnote
+% marker next to their \author entry.
+\newcommand{\corrauthor}[3]{%
+  \affil[#1]{}% no-op placeholder to keep affil numbering intact if needed
+  \gdef\corrauthorname{#2}%
+  \gdef\corrauthoremail{#3}%
+}
+\newcommand{\printcorrauthornote}{%
+  \begingroup\footnotesize\noindent
+  \textsuperscript{*}Corresponding author: \corrauthorname\ (\href{mailto:\corrauthoremail}{\corrauthoremail})
+  \endgroup\par\medskip
+}
+
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -32,13 +46,27 @@
 
 % ---------- Title ----------
 \title{Project Title Goes Here}
-\author[1]{Your Name}
-\affil[1]{Innopolis University}
+\author[1]{Firas~Jolha}
+\author[2]{Fname1~Lname1}
+\author[3]{Fname2~Lname2}
+\author[4]{Fname3~Lname3}
+\author[5,6]{Giancarlo~Succi}
+
+\affil[1]{Innopolis University, Innopolis, Russia (e-mail: f.jolha@innopolis.university)}
+\affil[2]{Innopolis University, Innopolis, Russia (e-mail: username1@innopolis.university)}
+\affil[3]{Innopolis University, Innopolis, Russia (e-mail: username2@innopolis.university)}
+\affil[4]{Innopolis University, Innopolis, Russia (e-mail: username3@innopolis.university)}
+\affil[5]{University of Bologna -- Alma Mater Studiorum, Bologna, Italy (e-mail: g.succi@unibo.it)}
+\affil[6]{Constructor Knowledge Labs and Constructor University, Bremen, Germany}
+
+\corrauthor[1]{Firas Jolha}{f.jolha@innopolis.university}
+
 \date{\today}
 
 \begin{document}
 
 \maketitle
+\printcorrauthornote
 
 \begin{abstract}
 Write a 150--250 word summary of your research question, methods, and
