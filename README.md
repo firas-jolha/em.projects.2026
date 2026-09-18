@@ -21,7 +21,7 @@ This repository is the official template for the **course research project** in 
 ├── data/                    # Raw or processed datasets used in the analysis
 ├── code/                    # Analysis scripts (R, Python, etc.)
 ├── references.bib           # BibTeX bibliography
-└── *.cls / *.sty            # any other LaTeX files
+└── *.cls / *.sty            # any other LaTeX related files
 ```
 
 Feel free to add or remove sections to fit the scope of your project, but keep the overall structure recognizable — it makes grading and peer review faster and more consistent.
